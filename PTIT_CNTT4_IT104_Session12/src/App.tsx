@@ -7,6 +7,7 @@ import FormatName from "./components/PTIT_CNTT4_IT104_bai5/FormatName";
 import AdminIndex from "./components/PTIT_CNTT4_IT104_bai6/AdminIndex";
 import UserLayout from "./components/PTIT_CNTT4_IT104_bai7/UserLayout";
 import UserTable from "./components/PTIT_CNTT4_IT104_bai8/UserTable";
+import TodoListIndex from "./components/PTIT_CNTT4_IT104_bai9/TodoListIndex";
 
 const App: React.FC = () => {
   return (
@@ -47,6 +48,10 @@ const App: React.FC = () => {
 
       <h2>Bài 8 - User Table</h2>
       <UserTable />
+
+      <h2>Bài 9 - Employee Manager</h2>
+      <TodoListIndex />
+
     </div>
   );
 };
