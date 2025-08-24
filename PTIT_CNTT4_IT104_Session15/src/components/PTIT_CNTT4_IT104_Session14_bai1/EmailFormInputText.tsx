@@ -5,7 +5,6 @@ interface State {
 }
 
 class EmailFormInputText extends Component<{}, State> {
-  state: { email: string; };
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -19,22 +18,24 @@ class EmailFormInputText extends Component<{}, State> {
 
   handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Email đã nhập: ${this.state.email}`);
+    const { email } = this.state;
+    localStorage.setItem('submittedEmail', JSON.stringify({ email }));
+    this.setState({ email: '' }); // reset input nếu muốn
   };
 
   render() {
+    const { email } = this.state;
+
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email:</label>
-          <input
-            type="text"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <label>Email:</label>
+        <input
+          type="text"
+          value={email}
+          onChange={this.handleChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }
