@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function delayedCallback(callback, delay) {
+            setTimeout(() => {
+                callback(delay);
+            }, delay);
+        }
+
+        let time = +prompt("Nhập thời gian delay (ms):");
+
+        const test = (param) => {
+            console.log("Hàm gọi sau", param);
+        };
+
+        delayedCallback(test, time);
+    </script>
+</body>
+</html>

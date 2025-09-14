@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arrs = [1, 2, 3, 4, 5];
+
+        const prinCallback = (index, item, arr) => {
+            console.log(`Index: ${index} | Value: ${item} | Array :`, arr);
+        };
+
+        const myForEach = (arr, callback) => {
+            for (let i = 0; i < arr.length; i++) {
+                callback(i, arr[i], arr);
+            }
+        };
+        myForEach(arrs, prinCallback);
+    </script>
+</body>
+</html>

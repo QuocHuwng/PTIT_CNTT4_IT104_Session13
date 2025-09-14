@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displayNumbers(callback, delay) {
+            let num = 1;
+            setInterval(() => {
+                callback(num);
+                num++;
+            }, delay);
+        }
+
+        const printNumber = (n) => {
+            console.log("Số thứ tự:", n);
+            document.write(`<p>Số thứ tự: ${n}</p>`);
+        };
+
+        displayNumbers(printNumber, 1000);
+    </script>
+</body>
+</html>
